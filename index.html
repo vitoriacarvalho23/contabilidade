@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitoria Contabilidade & Assessoria</title>
+    <!-- Google Fonts Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Identidade Visual Magnética */
+        :root {
+            --brand-color: #9f785a;      /* Marrom/Taupe sofisticado */
+            --brand-dark: #2c2520;       /* Preto corporativo suave */
+            --brand-light: #fdfbf9;      /* Off-white de fundo */
+            --card-bg: #ffffff;
+            --text-muted: #6e655f;
+            --whatsapp-color: #25d366;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--brand-light);
+            color: var(--brand-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navegação Fluida e Moderna */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(159, 120, 90, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 20px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--brand-dark);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--brand-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--brand-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+
+        .nav-menu a:hover {
+            color: var(--brand-color);
+            opacity: 1;
+        }
+
+        .nav-btn {
+            background-color: var(--brand-dark);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            opacity: 1 !important;
+            color: #fff !important;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--brand-color);
+        }
+
+        /* Moldura de Destaque para o Banner */
+        .hero-section {
+            max-width: 1240px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(44, 37, 32, 0.06);
+            background-color: var(--card-bg);
+        }
+
+        .hero-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        /* Seção Introdução Premium */
+        .intro-section {
+            max-width: 800px;
+            margin: 90px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .intro-section h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--brand-dark);
+        }
+
+        .intro-section p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* Grid de Serviços com Estilo Clean e Moderno */
+        .services-section {
+            background-color: #ffffff;
+            padding: 100px 20px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.01);
+        }
+
+        .services-container {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--brand-dark);
+        }
+
+        .section-header p {
+            color: var(--brand-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--brand-light);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(159, 120, 90, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: #ffffff;
+            box-shadow: 0 20px 40px rgba(159, 120, 90, 0.08);
+            border-color: rgba(159, 120, 90, 0.2);
+        }
+
+        .service-card h3 {
+            color: var(--brand-dark);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .service-card p {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Sessão de Conversão Inteligente (CTA) */
+        .cta-section {
+            padding: 120px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #3a312a 0%, var(--brand-dark) 100%);
+            color: #ffffff;
+            position: relative;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cta-email {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .cta-email:hover {
+            color: #ffffff;
+        }
+
+        .btn-whatsapp-premium {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--whatsapp-color);
+            color: white;
+            text-decoration: none;
+            padding: 20px 44px;
+            font-weight: 700;
+            border-radius: 100px;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            background-color: #20ba5a;
+        }
+
+        /* Rodapé Minimalista */
+        footer {
+            background-color: #1e1916;
+            color: rgba(255,255,255,0.4);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        /* Otimizações Responsivas Mobile */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 20px;
+            }
+            .nav-menu {
+                display: none; /* Simplificado para focar na conversão direta no mobile */
+            }
+            .intro-section h2, .cta-section h2 {
+                font-size: 2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Superior -->
+    <header>
+        <nav class="nav-container">
+            <div class="logo">VITORIA <span>CONTABILIDADE & ASSESSORIA</span></div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato" class="nav-btn">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Moldura do Banner Principal -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-wrapper">
+            <img src="Banner site contabilidade empresarial corporativo escritório empresa.png" alt="Vitoria Contabilidade & Assessoria Banner">
+        </div>
+    </section>
+
+    <!-- Posicionamento de Mercado -->
+    <section class="intro-section">
+        <h2>Descomplique a burocracia e faça sua empresa decolar</h2>
+        <p>Soluções contábeis inteligentes focadas na realidade do micro e pequeno empreendedor. Deixe a parte burocrática conosco e foque no que você faz de melhor: crescer.</p>
+    </section>
+
+    <!-- Bloco de Serviços Atualizado conforme Imagem Informativa -->
+    <section id="servicos" class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <p>Especialidades</p>
+                <h2>Nossas Soluções</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card">
+                    <h3>Abertura de MEI</h3>
+                    <p>Formalize seu negócio de forma rápida e segura, garantindo todos os seus direitos desde o primeiro dia.</p>
+                </div>
+                <!-- Serviço 2 -->
+                <div class="service-card">
+                    <h3>Declaração Anual do MEI</h3>
+                    <p>Envio regular da DASN-SIMEI e acompanhamento preventivo para evitar multas ou irregularidades.</p>
+                </div>
+                <!-- Serviço 3 -->
+                <div class="service-card">
+                    <h3>Emissão de DAS</h3>
+                    <p>Emissão e controle das guias mensais do MEI para manter seus tributos sempre em dia sem dores de cabeça.</p>
+                </div>
+                <!-- Serviço 4 -->
+                <div class="service-card">
+                    <h3>Regularização de Débitos</h3>
+                    <p>Análise aprofundada, consultas completas e parcelamento inteligente de pendências fiscais acumuladas.</p>
+                </div>
+                <!-- Serviço 5 -->
+                <div class="service-card">
+                    <h3>Imposto de Renda</h3>
+                    <p>Elaboração e transmissão da declaração anual de forma estratégica tanto para pessoa física quanto para o MEI.</p>
+                </div>
+                <!-- Serviço 6 -->
+                <div class="service-card">
+                    <h3>Consultoria Empresarial</h3>
+                    <p>Orientação próxima e consultiva focada em estruturação, organização financeira e crescimento sustentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zona de Conversão de Clientes -->
+    <section id="contato" class="cta-section">
+        <h2>Fale com quem entende do assunto</h2>
+        <p>Clique no botão abaixo para receber um atendimento personalizado imediatamente através do WhatsApp.</p>
+        
+        <div class="contact-links">
+            <a href="mailto:vitoriacontabilidadeassessoria@gmail.com" class="cta-email">
+                vitoriacontabilidadeassessoria@gmail.com
+            </a>
+
+            <a href="https://wa.me/5535988316852?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20uma%20consultoria%20para%20o%20meu%20negócio." target="_blank" class="btn-whatsapp-premium">
+                Iniciar Atendimento no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Vitoria Contabilidade & Assessoria. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
